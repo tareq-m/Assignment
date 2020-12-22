@@ -24,7 +24,6 @@ class GrayPage extends React.Component {
         const number = 25;
         const userNote = e.target.value
         //maybe remove length ?
-
         const result = e.target.value.length
         let textfilled = false;
         this.setState({ userInput: false });
@@ -49,11 +48,7 @@ class GrayPage extends React.Component {
     menuChange(e) {
         this.setState({ disabled: true });
         const dropValue = e.target.value;
-
-
         this.setState({ dropdownValue: dropValue });
-
-
     }
 
 
@@ -61,7 +56,6 @@ class GrayPage extends React.Component {
         const dropDown = this.state.dropdownValue;
         const userNote = this.state.userNote;
         const isSaved = this.state.isSaved;
-        console.log(isSaved)
         this.setState({
             userInputField: {
                 'ticket': {
@@ -70,9 +64,6 @@ class GrayPage extends React.Component {
                 }
             }, isSaved: true
         })
-        console.log(isSaved)
-        console.log(dropDown)
-        console.log(this.state.userInputField)
 
     }
     render() {
@@ -89,7 +80,6 @@ class GrayPage extends React.Component {
                             <option value="Cancel">Cancel an account</option>
                             <option value="gift">Buy and Recommend a gift</option>
                             <option value="Ask">Ask for the business</option>
-
                         </select>
                     </form>
                 </div>

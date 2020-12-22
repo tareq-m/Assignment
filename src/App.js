@@ -8,36 +8,34 @@ class App extends React.Component {
 
   constructor(props) {
     super(props);
-    this.state = {myTickets: [],sharedisSavedBoolen:true};
+    this.state = { myTickets: [], sharedisSavedBoolen: true };
     this.updateSharedBoolean = this.updateSharedBoolean.bind(this);
 
   }
-  updateSharedBoolean(sharedValue){
-    this.setState({sharedisSavedBoolen:sharedValue})
+  updateSharedBoolean(sharedValue) {
+    this.setState({ sharedisSavedBoolen: sharedValue })
   }
- 
 
-componentDidMount() {
+
+  componentDidMount() {
     fetch('./data.json')
-        .then(response => response.json())
-        .then(result => {
-            const tickets = result.map(item => {
-                return item
-            })
-            this.setState({
-                myTickets: tickets
-            });
+      .then(response => response.json())
+      .then(result => {
+        const tickets = result.map(item => {
+          return item
+        })
+        this.setState({
+          myTickets: tickets
         });
-}
-  
+      });
+  }
+
   render() {
     return (
       <div className="App " >
- 
- 
         <LeftBar tickets={this.state.myTickets} />
-        <GrayPage sharedisSavedBoolen={this.state.sharedisSavedBoolen} updateSharedBoolean={this.updateSharedBoolean} />
-        <WhitePage  sharedisSavedBoolen={this.state.sharedisSavedBoolen} updateSharedBoolean={this.updateSharedBoolean}/>
+        <GrayPage sharedisSavedBoolen={this.state.sharedisSavedBoolen} updateSharedBoolean={this.updateSharedBoolean}  />
+        <WhitePage sharedisSavedBoolen={this.state.sharedisSavedBoolen} updateSharedBoolean={this.updateSharedBoolean} />
       </div>
     );
   }
