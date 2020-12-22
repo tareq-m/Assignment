@@ -1,0 +1,33 @@
+.active {
+    color: red;
+}
+.not-active {
+    color: #d4d4d4;
+}
+.center-div {
+     width: 55%;
+    height: 100%;
+    background-color: #f7f7f7;
+}
+.blue-color{
+    color: #3fbdc9;
+}
+.bg-blue-color{
+    background: #3fbdc9;
+}
+.text-color{
+    color:#9b9393
+}
+
+select#dropDownMenu {
+    border:0px;
+    outline:0px;
+    background: #f7f7f7;
+ }
+ .footer {
+    position: relative;
+    top: 615px;
+    float: right;
+      
+}
+ 

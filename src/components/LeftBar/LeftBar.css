@@ -1,0 +1,41 @@
+.left-div {
+    width: 10%;
+    background-color: #fefefe;
+}
+
+#circle {
+    width: 80px;
+    height: 80px;
+    background: #fafafa;
+    border-radius: 50%;
+    border: 1px solid gray;
+}
+
+.dot {
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    display: inline-block;
+    top: 42px;
+    position: relative;
+    left: 24px;
+}
+
+h3.dot {
+    top: 53px;
+    position: relative;
+    left: 62px;
+}
+
+.green {
+    background-color: green;
+}
+
+.red {
+    background-color: red;
+}
+.fa-user{
+    position: relative;
+    top: 20%;
+    left: 28%;
+}
