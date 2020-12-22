@@ -12,12 +12,16 @@ class GrayPage extends React.Component {
         this.menuChange = this.menuChange.bind(this);
         this.storeUserInput = this.storeUserInput.bind(this);
         this.updateShared = this.updateShared.bind(this);
+        this.updateTitle = this.updateTitle.bind(this);
     }
     //Gray
 
 
     updateShared() {
         this.props.updateSharedBoolean(false);
+    }
+    updateTitle() {
+        this.props.updateTitle(this.state.userNote);
     }
 
     textCalculate(e) {
@@ -88,7 +92,7 @@ class GrayPage extends React.Component {
                     <textarea className="userText ml-5" onKeyUp={this.textCalculate}></textarea>
                     <div className={` ${this.state.userInput ? "active ml-5 " : "not-active ml-5"}`}> Charcters left  {this.state.value}  </div>
                 </div>
-                <div><button className='btn btn-info text-white footer mr-2 ' disabled={this.state.disabled} onClick={this.storeUser, this.updateShared} >Procceed</button></div>
+                <div><button className='btn btn-info text-white footer mr-2 ' disabled={this.state.disabled} onClick={this.storeUser, this.updateShared, this.updateTitle} >Procceed</button></div>
             </div>
         );
 

@@ -8,14 +8,17 @@ class App extends React.Component {
 
   constructor(props) {
     super(props);
-    this.state = { myTickets: [], sharedisSavedBoolen: true };
+    this.state = { myTickets: [], sharedisSavedBoolen: true ,newTitle:''};
     this.updateSharedBoolean = this.updateSharedBoolean.bind(this);
+    this.updateTitle = this.updateTitle.bind(this);
 
   }
   updateSharedBoolean(sharedValue) {
     this.setState({ sharedisSavedBoolen: sharedValue })
   }
-
+  updateTitle(value){
+    this.setState({newTitle :value})
+  }
 
   componentDidMount() {
     fetch('./data.json')
@@ -34,8 +37,8 @@ class App extends React.Component {
     return (
       <div className="App " >
         <LeftBar tickets={this.state.myTickets} />
-        <GrayPage sharedisSavedBoolen={this.state.sharedisSavedBoolen} updateSharedBoolean={this.updateSharedBoolean}  />
-        <WhitePage sharedisSavedBoolen={this.state.sharedisSavedBoolen} updateSharedBoolean={this.updateSharedBoolean} />
+        <GrayPage sharedisSavedBoolen={this.state.sharedisSavedBoolen} updateSharedBoolean={this.updateSharedBoolean}  ticketTitle={this.state.newTitle}  updateTitle={this.updateTitle}/>
+        <WhitePage sharedisSavedBoolen={this.state.sharedisSavedBoolen} updateSharedBoolean={this.updateSharedBoolean} ticketTitle={this.state.newTitle}  />
       </div>
     );
   }
